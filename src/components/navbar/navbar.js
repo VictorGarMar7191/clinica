@@ -13,12 +13,12 @@ const Navbar = () => {
         </button>
         <div className="collapse navbar-collapse d-flex flex-row-reverse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-                <NavLink className="nav-link" activeClassName="disabled" to="/Inicio">Inicio</NavLink>
+                <NavLink className="nav-link" activeClassName="disabled" to="/inicio">Inicio</NavLink>
                 <NavLink className="nav-link" activeClassName="disabled" to="/Quienes">¿Quiénes Somos?</NavLink>
                 <NavLink className="nav-link" activeClassName="disabled" to="/Contacto">Contacto</NavLink>
                 <NavLink className="nav-link" activeClassName="disabled" to="/Doctor">Doctor</NavLink>
                 <NavLink className="nav-link" activeClassName="disabled" to="/Consulta">Consulta</NavLink>
-                <NavLink className="nav-link" activeClassName="disabled" to="/Paciente">Paciente</NavLink>
+                <NavLink className="nav-link" activeClassName="disabled" to="/log-in-pac">Paciente</NavLink>
             </div>
         </div>
     </nav>
