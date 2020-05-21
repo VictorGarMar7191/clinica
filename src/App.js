@@ -4,13 +4,18 @@ import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
 import Landing from './components/landing/landing';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import LogInPacient from "./containers/LonInPacient/LogInPacient";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Navbar />
-        <Landing />
+        <Switch>
+        <Route exact path="/inicio" component={Landing} />
+        <Route exact path="/log-in-pac" component={LogInPacient} />
+        </Switch>
+     
         <Footer />
 
       </BrowserRouter>
