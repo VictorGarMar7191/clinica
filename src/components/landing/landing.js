@@ -17,9 +17,7 @@ const Landing = () => {
             <div className="card container">
                 <div className="card-header text-center">
                     <a name="quienes">
-                        <p className="">
                             <h1>Nuestra Plataforma</h1>
-                        </p>
                     </a>
                 </div>
 
@@ -31,25 +29,19 @@ const Landing = () => {
                     <div className="card-deck">
                         <div className="card">
                             <div className="card-body text-center">
-                                <p>
                                     <h1>1.-</h1>
-                                </p>
                                 <p className="card-text">Da de alta un paciente en la plataforma o encuentra su expediente clínico en nuestra plataforma.</p>
                             </div>
                         </div>
                         <div className="card">
                             <div className="card-body text-center">
-                                <p>
                                     <h1>2.-</h1>
-                                </p>
                                 <p className="card-text">Elabora una nota médica con la información de la consulta.</p>
                             </div>
                         </div>
                         <div className="card">
                             <div className="card-body text-center">
-                                <p>
                                     <h1>3.-</h1>
-                                </p>
                                 <p className="card-text">Guarda la información del paciente en la plataforma para que pueda ser accesible por otros especialistas.</p>
                             </div>
                         </div>

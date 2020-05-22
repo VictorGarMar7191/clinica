@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 const Doctor = () => {
+
   const PROJECT = 'clinicapp-3b040';
 
   const [cedula, setCedula] = useState('');
@@ -10,6 +11,9 @@ const Doctor = () => {
   const [apellidos, setApellidos] = useState('');
   const [especialidad, setEspecialidad] = useState('');
   const [horario, setHorario] = useState('');
+  const [error, setError] = useState('');
+  const history = useHistory();
+  const [loading, setLoading] = useState(false);
 
   const handleCedula = (e) => {
     setCedula(e.target.value);
@@ -20,7 +24,6 @@ const Doctor = () => {
   }
 
   const handleApellidos = (e) => {
-    console.log(e.target.value);
     setApellidos(e.target.value);
   }
 
@@ -33,23 +36,37 @@ const Doctor = () => {
   }
 
   const createRegister = () => {
-    if(cedula.length> 5 && nombre.length>5 && apellidos.length>5 && especialidad.length>5 && horario.length>5){
+    setLoading(true);
+    if (nombre.length > 2
+      && apellidos.length > 5
+      && cedula.length > 5
+      && especialidad.length > 5
+      && horario.length > 5) {
       const body = {
         cedula: cedula,
-        nombre : nombre,
+        nombre: nombre,
         apellidos: apellidos,
         especialidad: especialidad,
         horario: horario
       }
       axios.post(`https://${PROJECT}.firebaseio.com/registro-medicos.json`, body)
-      .then(console.log("La peticón fue exitosa"))
-      .catch(console.log("No exitosa"));
+        .then(() => {
+          history.push('/');
+        })
+        .catch(() => {
+          setLoading(false);
+          setError("Ocurrió un error de conexión");
+        });
+    } else {
+      setLoading(false);
+      setError('Verifica que ingresaste información válida');
     }
-  }
+  };
 
   return (
+
+    // </div>
     <div>
-      <form>
         <h1>Registro de médico</h1>
         <div className="form-group row">
           <label htmlFor="" className="col-sm-2 col-form-label">Cédula</label>
@@ -85,10 +102,18 @@ const Doctor = () => {
           <input onChange={handleHorario} value={horario} type="text" className="form-control text-left" id="horario"  />
         </div>
         </div>
-        <button onClick={() => createRegister()} type="submit" className="btn btn-primary">Submit</button>
-      </form>
+        <div class="text-danger">
+           {error}
+         </div>
+         {loading
+           ?
+          <div class="spinner-border text-info" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          : <button onClick={() => createRegister()} type="submit" className="btn btn-primary">Crear Registro</button>
+        }
     </div>
   )
 }
 
-export default Doctor
+export default Doctor;

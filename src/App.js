@@ -11,7 +11,6 @@ import ConsultForm from "./components/consultForm/consultForm";
 
 function App() {
   return (
-    <div className="App">
       <BrowserRouter>
         <Navbar />
         <Switch>
@@ -25,7 +24,6 @@ function App() {
         <Footer />
 
       </BrowserRouter>
-    </div>
   );
 }
 
