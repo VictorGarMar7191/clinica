@@ -7,7 +7,7 @@ const Landing = () => {
         <div>
             <div className="container">
                 <div className="card bg-dark text-black">
-                    <img src={doctor} className="card-img" />
+                    <img src={doctor} alt="" className="card-img" />
                     <div className="card-img-overlay">
                     </div>
                 </div>

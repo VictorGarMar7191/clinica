@@ -6,6 +6,8 @@ import Landing from './components/landing/landing';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LogInPacient from "./containers/LonInPacient/LogInPacient";
 import DoctorContainer from './containers/DoctorContainer/DoctorContainer';
+import PacientCard from "./containers/PacientCard/PacientCard";
+import ConsultForm from "./components/consultForm/consultForm";
 
 function App() {
   return (
@@ -16,8 +18,10 @@ function App() {
         <Route exact path="/inicio" component={Landing} />
         <Route exact path="/log-in-pac" component={LogInPacient} />
         <Route exact path="/register-doctor" component={DoctorContainer} />
+        <Route exact path="/Consulta" component={ConsultForm} />
+        <Route exact path="/paciente1" component={PacientCard} />
         </Switch>
-     
+
         <Footer />
 
       </BrowserRouter>
