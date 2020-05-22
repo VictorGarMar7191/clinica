@@ -17,7 +17,7 @@ const Navbar = () => {
                 <NavLink className="nav-link" activeClassName="disabled" to="/Quienes">¿Quiénes Somos?</NavLink>
                 <NavLink className="nav-link" activeClassName="disabled" to="/Contacto">Contacto</NavLink>
                 <NavLink className="nav-link" activeClassName="disabled" to="/register-doctor">Doctor</NavLink>
-                <NavLink className="nav-link" activeClassName="disabled" to="/Consulta">Consulta</NavLink>
+                <NavLink className="nav-link" activeClassName="disabled" to="/login-doctor">Consulta</NavLink>
                 <NavLink className="nav-link" activeClassName="disabled" to="/log-in-pac">Paciente</NavLink>
             </div>
         </div>

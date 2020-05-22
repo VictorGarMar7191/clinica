@@ -11,6 +11,7 @@ const Doctor = () => {
   const [apellidos, setApellidos] = useState('');
   const [especialidad, setEspecialidad] = useState('');
   const [horario, setHorario] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const history = useHistory();
   const [loading, setLoading] = useState(false);
@@ -35,19 +36,25 @@ const Doctor = () => {
     setHorario(e.target.value);
   }
 
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  }
+
   const createRegister = () => {
     setLoading(true);
     if (nombre.length > 2
       && apellidos.length > 5
       && cedula.length > 5
       && especialidad.length > 5
-      && horario.length > 5) {
+      && horario.length > 5
+      && password.length >5) {
       const body = {
         cedula: cedula,
         nombre: nombre,
         apellidos: apellidos,
         especialidad: especialidad,
-        horario: horario
+        horario: horario,
+        password: password
       }
       axios.post(`https://${PROJECT}.firebaseio.com/registro-medicos.json`, body)
         .then(() => {
@@ -102,6 +109,15 @@ const Doctor = () => {
           <input onChange={handleHorario} value={horario} type="text" className="form-control text-left" id="horario"  />
         </div>
         </div>
+
+        <div className="form-group row">
+          <label htmlFor="" className="col-sm-2 col-form-label">Contraseña</label>
+          <div className="col-sm-10">
+          <input onChange={handlePassword} value={password} type="password" className="form-control text-left" id="password" 
+                  placeholder="La contraseña debe tener mínimo 5 caracteres" />
+        </div>
+        </div>
+
         <div class="text-danger">
            {error}
          </div>
