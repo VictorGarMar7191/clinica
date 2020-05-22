@@ -5,7 +5,7 @@ import Footer from './components/footer/footer';
 import Landing from './components/landing/landing';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LogInPacient from "./containers/LonInPacient/LogInPacient";
-import DoctorContainer from './containers/DoctorContainer/DoctorContainer'
+import DoctorContainer from './containers/DoctorContainer/DoctorContainer';
 
 function App() {
   return (
