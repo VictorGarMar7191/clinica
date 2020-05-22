@@ -2,10 +2,10 @@ import React from 'react';
 import './App.css';
 import Navbar from './components/navbar/navbar';
 import Footer from './components/footer/footer';
-import Landing from './components/landing/landing';
+import Landing from './containers/landing/landing';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import LogInPacient from "./containers/LonInPacient/LogInPacient";
-import PacientCard from "./containers/PacientCard/PacientCard"
+import LogInPacient from "./components/LonInPacient/LogInPacient";
+import PacientCard from "./components/PacientCard/PacientCard"
 
 function App() {
   return (

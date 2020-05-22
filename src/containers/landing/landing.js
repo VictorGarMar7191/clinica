@@ -7,7 +7,7 @@ const Landing = () => {
         <div>
             <div className="container">
                 <div className="card bg-dark text-black">
-                    <img src={doctor} className="card-img" />
+                    <img src={doctor} alt="" className="card-img" />
                     <div className="card-img-overlay">
                     </div>
                 </div>
@@ -16,11 +16,11 @@ const Landing = () => {
 
             <div className="card container">
                 <div className="card-header text-center">
-                    <a name="quienes">
+                   
                         <p className="">
                             <h1>Nuestra Plataforma</h1>
                         </p>
-                    </a>
+
                 </div>
 
                 <div className="card-body">
